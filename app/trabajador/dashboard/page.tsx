@@ -24,14 +24,23 @@ export default function TrabajadorDashboardPage() {
       <section className="px-5 py-8">
         <div className="mx-auto max-w-6xl">
           {/* titulo principal */}
-          <div>
-            <h1 className="text-3xl font-extrabold text-slate-950">
-              Dashboard
-            </h1>
+          <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+            <div>
+              <h1 className="text-3xl font-extrabold text-slate-950">
+                Dashboard
+              </h1>
 
-            <p className="mt-2 text-slate-600">
-              Revisá solicitudes disponibles y gestioná tus trabajos.
-            </p>
+              <p className="mt-2 text-slate-600">
+                Revisá solicitudes disponibles y gestioná tus trabajos.
+              </p>
+            </div>
+
+            <Link
+              href="/trabajador/perfil"
+              className="rounded-xl border border-slate-300 px-5 py-3 text-center font-semibold text-slate-800 transition hover:bg-slate-50"
+            >
+              Mi perfil
+            </Link>
           </div>
 
           {/* filtros del trabajador */}
@@ -51,8 +60,8 @@ export default function TrabajadorDashboardPage() {
                   Pintura
                 </span>
 
-                <span className="rounded-lg bg-yellow-500 px-3 py-1 text-sm font-bold text-white">
-                  En proceso
+                <span className="rounded-lg bg-blue-500 px-3 py-1 text-sm font-bold text-white">
+                  Publicada
                 </span>
               </div>
 
@@ -85,8 +94,8 @@ export default function TrabajadorDashboardPage() {
                   Sanitaria
                 </span>
 
-                <span className="rounded-lg bg-green-500 px-3 py-1 text-sm font-bold text-white">
-                  Finalizada
+                <span className="rounded-lg bg-blue-500 px-3 py-1 text-sm font-bold text-white">
+                  Publicada
                 </span>
               </div>
 
