@@ -25,10 +25,17 @@ export default function RegistroPage() {
             <p className="mt-4 text-base leading-7 text-slate-600 sm:text-lg">
               Elige el tipo de cuenta que mejor se adapte a tus necesidades
             </p>
+
+            <p className="mt-4 text-sm text-slate-600">
+              ¿Ya tenés cuenta?{" "}
+              <Link href="/login" className="font-semibold text-teal-600">
+                Iniciar sesión
+              </Link>
+            </p>
           </div>
 
           <div className="mt-10 grid gap-6 md:grid-cols-2">
-            <article className="flex min-h-[520px] flex-col rounded-2xl border border-slate-200 bg-white p-7 shadow-sm transition hover:shadow-md">
+            <article className="flex min-h-130 flex-col rounded-2xl border border-slate-200 bg-white p-7 shadow-sm transition hover:shadow-md">
               <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-teal-50 text-teal-500">
                 <svg
                   width="32"
@@ -49,7 +56,7 @@ export default function RegistroPage() {
                 Soy Cliente
               </h2>
 
-              <p className="mt-3 min-h-[84px] text-base leading-7 text-slate-600">
+              <p className="mt-3 min-h-21 text-base leading-7 text-slate-600">
                 Necesito contratar profesionales para trabajos en mi hogar o
                 negocio.
               </p>
@@ -79,7 +86,7 @@ export default function RegistroPage() {
               </Link>
             </article>
 
-            <article className="flex min-h-[520px] flex-col rounded-2xl border border-slate-200 bg-white p-7 shadow-sm transition hover:shadow-md">
+            <article className="flex min-h-130 flex-col rounded-2xl border border-slate-200 bg-white p-7 shadow-sm transition hover:shadow-md">
               <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-orange-50 text-orange-500">
                 <svg
                   width="32"
@@ -101,7 +108,7 @@ export default function RegistroPage() {
                 Soy Trabajador
               </h2>
 
-              <p className="mt-3 min-h-[84px] text-base leading-7 text-slate-600">
+              <p className="mt-3 min-h-21 text-base leading-7 text-slate-600">
                 Ofrezco mis servicios profesionales y busco nuevos clientes.
               </p>
 

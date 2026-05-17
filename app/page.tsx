@@ -3,8 +3,8 @@ import Link from "next/link";
 export default function Home() {
   return (
     <main className="min-h-screen bg-white">
-      <header className="flex h-16 items-center border-b border-slate-200 bg-white px-5">
-        <div className="flex items-center gap-3">
+      <header className="flex h-16 items-center justify-between border-b border-slate-200 bg-white px-5">
+        <Link href="/" className="flex items-center gap-3">
           <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-teal-500 text-lg font-bold text-white">
             S
           </div>
@@ -12,7 +12,14 @@ export default function Home() {
           <span className="text-lg font-bold tracking-wide text-slate-900">
             ServiRed
           </span>
-        </div>
+        </Link>
+
+        <Link
+          href="/login"
+          className="rounded-lg border border-slate-200 px-4 py-2 text-sm font-semibold text-slate-800"
+        >
+          Iniciar sesión
+        </Link>
       </header>
 
       <section className="relative flex min-h-[calc(100vh-4rem)] items-center justify-center overflow-hidden bg-slate-900 px-5 py-16">
@@ -28,12 +35,21 @@ export default function Home() {
             resolver servicios del hogar, comercio o edificio.
           </p>
 
-          <Link
-            href="/registro"
-            className="mt-10 rounded-xl bg-teal-500 px-10 py-4 text-lg font-bold text-white shadow-lg transition hover:bg-teal-600"
-          >
-            Comenzar
-          </Link>
+          <div className="mt-10 flex w-full flex-col gap-4 sm:w-auto sm:flex-row">
+            <Link
+              href="/registro"
+              className="rounded-xl bg-teal-500 px-10 py-4 text-center text-lg font-bold text-white shadow-lg transition hover:bg-teal-600"
+            >
+              Comenzar
+            </Link>
+
+            <Link
+              href="/login"
+              className="rounded-xl border border-white/40 px-10 py-4 text-center text-lg font-bold text-white transition hover:bg-white/10"
+            >
+              Iniciar sesión
+            </Link>
+          </div>
         </div>
       </section>
     </main>
