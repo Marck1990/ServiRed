@@ -103,18 +103,25 @@ export default function DetalleSolicitudPage() {
 
                 <div className="flex justify-between gap-4">
                   <span>Estado</span>
-                  <span className="font-semibold text-slate-950">Publicada</span>
+                  <span className="font-semibold text-slate-950">
+                    Publicada
+                  </span>
                 </div>
 
                 <div className="flex justify-between gap-4">
                   <span>Fecha de publicación</span>
-                  <span className="font-semibold text-slate-950">20/5/2026</span>
+                  <span className="font-semibold text-slate-950">
+                    20/5/2026
+                  </span>
                 </div>
               </div>
 
-              <button className="mt-6 w-full rounded-xl bg-teal-500 px-5 py-3 font-semibold text-white transition hover:bg-teal-600">
+              <Link
+                href="/cliente/solicitudes/1/postulaciones"
+                className="mt-6 block w-full rounded-xl bg-teal-500 px-5 py-3 text-center font-semibold text-white transition hover:bg-teal-600"
+              >
                 Ver postulaciones
-              </button>
+              </Link>
 
               <button className="mt-3 w-full rounded-xl border border-slate-300 px-5 py-3 font-semibold text-slate-800 transition hover:bg-slate-50">
                 Cancelar solicitud
