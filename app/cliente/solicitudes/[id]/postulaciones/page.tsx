@@ -1,24 +1,10 @@
 import Link from "next/link";
+import Header from "@/components/Header";
 
 export default function PostulacionesSolicitudPage() {
   return (
     <main className="min-h-screen bg-white">
-      {/* encabezado principal */}
-      <header className="flex h-16 items-center justify-between border-b border-slate-200 bg-white px-5">
-        <Link href="/" className="flex items-center gap-3">
-          <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-teal-500 text-lg font-bold text-white">
-            S
-          </div>
-
-          <span className="text-lg font-bold tracking-wide text-slate-900">
-            ServiRed
-          </span>
-        </Link>
-
-        <button className="rounded-lg border border-slate-200 px-4 py-2 text-sm font-semibold text-slate-800">
-          Cerrar sesión
-        </button>
-      </header>
+      <Header mostrarCerrarSesion />
 
       {/* contenido principal */}
       <section className="px-5 py-8">

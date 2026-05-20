@@ -1,24 +1,10 @@
 import Link from "next/link";
+import Header from "@/components/Header";
 
 export default function PerfilTrabajadorPage() {
   return (
     <main className="min-h-screen bg-white">
-      {/* encabezado principal */}
-      <header className="flex h-16 items-center justify-between border-b border-slate-200 bg-white px-5">
-        <Link href="/" className="flex items-center gap-3">
-          <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-teal-500 text-lg font-bold text-white">
-            S
-          </div>
-
-          <span className="text-lg font-bold tracking-wide text-slate-900">
-            ServiRed
-          </span>
-        </Link>
-
-        <button className="rounded-lg border border-slate-200 px-4 py-2 text-sm font-semibold text-slate-800">
-          Cerrar sesión
-        </button>
-      </header>
+      <Header mostrarCerrarSesion />
 
       {/* contenido principal */}
       <section className="px-5 py-8">
@@ -30,147 +16,189 @@ export default function PerfilTrabajadorPage() {
             Volver al panel
           </Link>
 
-          <div className="mt-6 grid gap-6 lg:grid-cols-[0.8fr_1.4fr]">
+          <div className="mt-6 grid gap-6 lg:grid-cols-[0.8fr_1.2fr]">
             {/* resumen del perfil */}
             <aside className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
-              <div className="flex h-24 w-24 items-center justify-center rounded-2xl bg-orange-100 text-3xl font-bold text-orange-600">
-                CR
-              </div>
+              <div className="flex flex-col items-center text-center">
+                <div className="flex h-24 w-24 items-center justify-center rounded-full bg-orange-500 text-3xl font-extrabold text-white">
+                  C
+                </div>
 
-              <h1 className="mt-5 text-2xl font-extrabold text-slate-950">
-                Carlos Rodríguez
-              </h1>
+                <h1 className="mt-5 text-2xl font-extrabold text-slate-950">
+                  Carlos Rodríguez
+                </h1>
 
-              <p className="mt-2 text-slate-600">
-                Técnico en pintura y reparaciones generales.
-              </p>
-
-              <div className="mt-6 space-y-3 text-sm text-slate-700">
-                <p>
-                  <span className="font-semibold text-slate-950">Rubro:</span>{" "}
-                  Pintura
+                <p className="mt-1 text-sm text-slate-600">
+                  Pintor y reparador general
                 </p>
 
-                <p>
-                  <span className="font-semibold text-slate-950">Zona:</span>{" "}
-                  Montevideo y alrededores
-                </p>
-
-                <p>
-                  <span className="font-semibold text-slate-950">
-                    Calificación:
-                  </span>{" "}
+                <span className="mt-4 rounded-lg bg-orange-100 px-4 py-2 text-sm font-bold text-orange-700">
                   4.8 / 5
-                </p>
-
-                <p>
-                  <span className="font-semibold text-slate-950">
-                    Trabajos finalizados:
-                  </span>{" "}
-                  24
-                </p>
+                </span>
               </div>
+
+              <div className="mt-6 space-y-4 text-sm text-slate-700">
+                <div className="flex justify-between gap-4 border-t border-slate-200 pt-4">
+                  <span>Trabajos finalizados</span>
+                  <span className="font-semibold text-slate-950">24</span>
+                </div>
+
+                <div className="flex justify-between gap-4 border-t border-slate-200 pt-4">
+                  <span>Postulaciones activas</span>
+                  <span className="font-semibold text-slate-950">3</span>
+                </div>
+
+                <div className="flex justify-between gap-4 border-t border-slate-200 pt-4">
+                  <span>Zona de trabajo</span>
+                  <span className="font-semibold text-slate-950">
+                    Montevideo
+                  </span>
+                </div>
+
+                <div className="flex justify-between gap-4 border-t border-slate-200 pt-4">
+                  <span>Miembro desde</span>
+                  <span className="font-semibold text-slate-950">2026</span>
+                </div>
+              </div>
+
+              <button
+                type="button"
+                className="mt-6 w-full rounded-xl bg-orange-500 px-5 py-3 font-semibold text-white transition hover:bg-orange-600"
+              >
+                Editar perfil
+              </button>
             </aside>
 
-            {/* datos editables */}
-            <section className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
-              <h2 className="text-xl font-bold text-slate-950">
-                Información profesional
-              </h2>
+            {/* informacion principal */}
+            <section className="space-y-6">
+              <article className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+                <h2 className="text-xl font-bold text-slate-950">
+                  Información profesional
+                </h2>
 
-              <p className="mt-2 text-sm leading-6 text-slate-600">
-                Estos datos serán visibles para los clientes cuando revisen tu
-                perfil.
-              </p>
-
-              <form className="mt-7 flex flex-col gap-5">
-                <div>
-                  <label className="block text-sm font-medium text-slate-900">
-                    Nombre completo
-                  </label>
-
-                  <input
-                    type="text"
-                    defaultValue="Carlos Rodríguez"
-                    className="mt-2 w-full rounded-lg border border-slate-300 px-4 py-3 text-sm outline-none focus:border-orange-500"
-                  />
-                </div>
-
-                <div>
-                  <label className="block text-sm font-medium text-slate-900">
-                    Descripción profesional
-                  </label>
-
-                  <textarea
-                    rows={5}
-                    defaultValue="Trabajo en pintura interior, reparaciones generales y mantenimiento del hogar. Me enfoco en cumplir los plazos y dejar el espacio limpio al terminar."
-                    className="mt-2 w-full resize-none rounded-lg border border-slate-300 px-4 py-3 text-sm outline-none focus:border-orange-500"
-                  />
-                </div>
-
-                <div className="grid gap-5 sm:grid-cols-2">
+                <div className="mt-5 grid gap-5 sm:grid-cols-2">
                   <div>
-                    <label className="block text-sm font-medium text-slate-900">
-                      Rubro principal
-                    </label>
+                    <p className="text-sm font-semibold text-slate-950">
+                      Rubros principales
+                    </p>
 
-                    <select
-                      defaultValue="Pintura"
-                      className="mt-2 w-full rounded-lg border border-slate-300 px-4 py-3 text-sm text-slate-700 outline-none focus:border-orange-500"
-                    >
-                      <option>Sanitaria</option>
-                      <option>Electricidad</option>
-                      <option>Albañilería</option>
-                      <option>Pintura</option>
-                      <option>Jardinería</option>
-                      <option>Carpintería</option>
-                      <option>Limpieza</option>
-                      <option>Mudanzas</option>
-                      <option>Reparación general</option>
-                      <option>Cámaras y seguridad</option>
-                    </select>
+                    <p className="mt-2 leading-7 text-slate-600">
+                      Pintura, reparaciones generales, mantenimiento del hogar.
+                    </p>
                   </div>
 
                   <div>
-                    <label className="block text-sm font-medium text-slate-900">
-                      Zona de cobertura
-                    </label>
+                    <p className="text-sm font-semibold text-slate-950">
+                      Experiencia
+                    </p>
 
-                    <input
-                      type="text"
-                      defaultValue="Montevideo y alrededores"
-                      className="mt-2 w-full rounded-lg border border-slate-300 px-4 py-3 text-sm outline-none focus:border-orange-500"
-                    />
+                    <p className="mt-2 leading-7 text-slate-600">
+                      Más de 5 años realizando trabajos particulares y
+                      mantenimiento en viviendas.
+                    </p>
+                  </div>
+
+                  <div>
+                    <p className="text-sm font-semibold text-slate-950">
+                      Disponibilidad
+                    </p>
+
+                    <p className="mt-2 leading-7 text-slate-600">
+                      Lunes a sábado, horario a coordinar.
+                    </p>
+                  </div>
+
+                  <div>
+                    <p className="text-sm font-semibold text-slate-950">
+                      Forma de trabajo
+                    </p>
+
+                    <p className="mt-2 leading-7 text-slate-600">
+                      Presupuesto previo, coordinación con el cliente y
+                      seguimiento hasta finalizar.
+                    </p>
                   </div>
                 </div>
+              </article>
 
-                <div>
-                  <label className="block text-sm font-medium text-slate-900">
-                    Fotos de trabajos realizados
-                  </label>
+              <article className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+                <h2 className="text-xl font-bold text-slate-950">
+                  Calificaciones recibidas
+                </h2>
 
-                  <div className="mt-2 grid grid-cols-2 gap-4 sm:grid-cols-3">
-                    <div className="flex h-28 items-center justify-center rounded-xl bg-slate-100 text-sm text-slate-500">
-                      Trabajo 1
+                <div className="mt-5 space-y-4">
+                  <div className="rounded-xl bg-slate-100 p-4">
+                    <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
+                      <p className="font-semibold text-slate-950">
+                        Laura Martínez
+                      </p>
+
+                      <span className="w-fit rounded-lg bg-orange-100 px-3 py-1 text-sm font-bold text-orange-700">
+                        5 / 5
+                      </span>
                     </div>
 
-                    <div className="flex h-28 items-center justify-center rounded-xl bg-slate-100 text-sm text-slate-500">
-                      Trabajo 2
+                    <p className="mt-3 leading-7 text-slate-600">
+                      Muy buen trabajo. Fue puntual, prolijo y dejó todo limpio
+                      al terminar.
+                    </p>
+                  </div>
+
+                  <div className="rounded-xl bg-slate-100 p-4">
+                    <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
+                      <p className="font-semibold text-slate-950">
+                        Martín Gómez
+                      </p>
+
+                      <span className="w-fit rounded-lg bg-orange-100 px-3 py-1 text-sm font-bold text-orange-700">
+                        4.6 / 5
+                      </span>
                     </div>
 
-                    <div className="flex h-28 items-center justify-center rounded-xl border border-dashed border-slate-300 bg-slate-50 text-sm text-slate-500">
-                      Agregar foto
+                    <p className="mt-3 leading-7 text-slate-600">
+                      Buen trato y buena comunicación. El presupuesto fue claro
+                      desde el principio.
+                    </p>
+                  </div>
+
+                  <div className="rounded-xl bg-slate-100 p-4">
+                    <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
+                      <p className="font-semibold text-slate-950">
+                        Sofía Núñez
+                      </p>
+
+                      <span className="w-fit rounded-lg bg-orange-100 px-3 py-1 text-sm font-bold text-orange-700">
+                        4.8 / 5
+                      </span>
                     </div>
+
+                    <p className="mt-3 leading-7 text-slate-600">
+                      Cumplió con lo acordado y explicó bien cada parte del
+                      trabajo.
+                    </p>
                   </div>
                 </div>
+              </article>
 
-                <button
-                  type="button"
-                  className="rounded-xl bg-orange-500 px-5 py-3 font-semibold text-white transition hover:bg-orange-600"
-                >
-                  Guardar cambios
-                </button>
-              </form>
+              <article className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+                <h2 className="text-xl font-bold text-slate-950">
+                  Trabajos recientes
+                </h2>
+
+                <div className="mt-5 grid gap-4 sm:grid-cols-3">
+                  <div className="flex h-28 items-center justify-center rounded-xl bg-slate-100 text-sm text-slate-500">
+                    Trabajo 1
+                  </div>
+
+                  <div className="flex h-28 items-center justify-center rounded-xl bg-slate-100 text-sm text-slate-500">
+                    Trabajo 2
+                  </div>
+
+                  <div className="flex h-28 items-center justify-center rounded-xl bg-slate-100 text-sm text-slate-500">
+                    Trabajo 3
+                  </div>
+                </div>
+              </article>
             </section>
           </div>
         </div>

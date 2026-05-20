@@ -1,167 +1,121 @@
 import Link from "next/link";
+import Header from "@/components/Header";
 
 export default function RegistroPage() {
   return (
     <main className="min-h-screen bg-white">
-      <header className="flex h-16 items-center border-b border-slate-200 bg-white px-5">
-        <Link href="/" className="flex items-center gap-3">
-          <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-teal-500 text-lg font-bold text-white">
-            S
-          </div>
+      <Header />
 
-          <span className="text-lg font-bold tracking-wide text-slate-900">
-            ServiRed
-          </span>
-        </Link>
-      </header>
-
+      {/* contenido principal */}
       <section className="px-5 py-10 md:py-14">
         <div className="mx-auto max-w-5xl">
-          <div className="text-center">
-            <h1 className="text-3xl font-extrabold tracking-tight text-slate-950 sm:text-4xl">
-              Únete a ServiRed
+          <div className="mx-auto max-w-2xl text-center">
+            <span className="inline-flex rounded-full bg-teal-100 px-4 py-2 text-sm font-bold text-teal-700">
+              Crear cuenta
+            </span>
+
+            <h1 className="mt-6 text-3xl font-extrabold text-slate-950 md:text-4xl">
+              ¿Cómo querés registrarte?
             </h1>
 
-            <p className="mt-4 text-base leading-7 text-slate-600 sm:text-lg">
-              Elige el tipo de cuenta que mejor se adapte a tus necesidades
-            </p>
-
-            <p className="mt-4 text-sm text-slate-600">
-              ¿Ya tenés cuenta?{" "}
-              <Link href="/login" className="font-semibold text-teal-600">
-                Iniciar sesión
-              </Link>
+            <p className="mt-3 text-sm leading-6 text-slate-600 md:text-base md:leading-8">
+              Elegí una opción para continuar en ServiRed.
             </p>
           </div>
 
-          <div className="mt-10 grid gap-6 md:grid-cols-2">
-            <article className="flex min-h-130 flex-col rounded-2xl border border-slate-200 bg-white p-7 shadow-sm transition hover:shadow-md">
-              <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-teal-50 text-teal-500">
-                <svg
-                  width="32"
-                  height="32"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="1.8"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  <path d="M20 21a8 8 0 0 0-16 0" />
-                  <circle cx="12" cy="7" r="4" />
-                </svg>
+          {/* version celular */}
+          <div className="mx-auto mt-8 flex max-w-md flex-col gap-4 md:hidden">
+            <Link
+              href="/registro/cliente"
+              className="rounded-2xl bg-teal-500 px-5 py-5 text-center font-bold text-white shadow-sm transition hover:bg-teal-600"
+            >
+              Soy cliente
+              <span className="mt-1 block text-sm font-medium text-teal-50">
+                Quiero publicar trabajos
+              </span>
+            </Link>
+
+            <Link
+              href="/registro/trabajador"
+              className="rounded-2xl bg-orange-500 px-5 py-5 text-center font-bold text-white shadow-sm transition hover:bg-orange-600"
+            >
+              Soy trabajador
+              <span className="mt-1 block text-sm font-medium text-orange-50">
+                Quiero postularme a trabajos
+              </span>
+            </Link>
+          </div>
+
+          {/* version escritorio */}
+          <div className="mt-10 hidden items-stretch gap-6 md:grid md:grid-cols-2">
+            <article className="flex min-h-96 flex-col rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+              <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-teal-500 text-2xl font-extrabold text-white">
+                C
               </div>
 
-              <h2 className="mt-7 text-2xl font-bold text-slate-950">
-                Soy Cliente
+              <h2 className="mt-6 text-2xl font-extrabold text-slate-950">
+                Soy cliente
               </h2>
 
-              <p className="mt-3 min-h-21 text-base leading-7 text-slate-600">
-                Necesito contratar profesionales para trabajos en mi hogar o
-                negocio.
+              <p className="mt-4 leading-7 text-slate-600">
+                Publicá solicitudes de trabajo, recibí propuestas, compará
+                trabajadores y elegí la mejor opción según precio, experiencia y
+                reputación.
               </p>
 
-              <ul className="mt-5 space-y-3 text-sm text-slate-800">
-                <li className="flex gap-2">
-                  <span className="text-teal-500">✓</span>
-                  Publica solicitudes de trabajo
-                </li>
-
-                <li className="flex gap-2">
-                  <span className="text-teal-500">✓</span>
-                  Recibe postulaciones de profesionales
-                </li>
-
-                <li className="flex gap-2">
-                  <span className="text-teal-500">✓</span>
-                  Elige al mejor candidato
-                </li>
-              </ul>
+              <div className="mt-6 space-y-3 text-sm text-slate-700">
+                <p>Publicar trabajos</p>
+                <p>Recibir postulaciones</p>
+                <p>Comparar perfiles</p>
+                <p>Calificar trabajadores</p>
+              </div>
 
               <Link
                 href="/registro/cliente"
                 className="mt-auto block rounded-xl bg-teal-500 px-5 py-3 text-center font-semibold text-white transition hover:bg-teal-600"
               >
-                Registrarse como cliente
+                Registrarme como cliente
               </Link>
             </article>
 
-            <article className="flex min-h-130 flex-col rounded-2xl border border-slate-200 bg-white p-7 shadow-sm transition hover:shadow-md">
-              <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-orange-50 text-orange-500">
-                <svg
-                  width="32"
-                  height="32"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="1.8"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  <rect x="3" y="7" width="18" height="14" rx="2" />
-                  <path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2" />
-                  <path d="M3 13h18" />
-                </svg>
+            <article className="flex min-h-96 flex-col rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+              <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-orange-500 text-2xl font-extrabold text-white">
+                T
               </div>
 
-              <h2 className="mt-7 text-2xl font-bold text-slate-950">
-                Soy Trabajador
+              <h2 className="mt-6 text-2xl font-extrabold text-slate-950">
+                Soy trabajador
               </h2>
 
-              <p className="mt-3 min-h-21 text-base leading-7 text-slate-600">
-                Ofrezco mis servicios profesionales y busco nuevos clientes.
+              <p className="mt-4 leading-7 text-slate-600">
+                Encontrá trabajos disponibles, enviá tus propuestas, mostrale tu
+                perfil a los clientes y construí reputación dentro de ServiRed.
               </p>
 
-              <ul className="mt-5 space-y-3 text-sm text-slate-800">
-                <li className="flex gap-2">
-                  <span className="text-orange-500">✓</span>
-                  Encuentra trabajos disponibles
-                </li>
-
-                <li className="flex gap-2">
-                  <span className="text-orange-500">✓</span>
-                  Postúlate a proyectos que te interesen
-                </li>
-
-                <li className="flex gap-2">
-                  <span className="text-orange-500">✓</span>
-                  Construye tu reputación
-                </li>
-              </ul>
+              <div className="mt-6 space-y-3 text-sm text-slate-700">
+                <p>Ver solicitudes disponibles</p>
+                <p>Enviar presupuestos</p>
+                <p>Mostrar experiencia</p>
+                <p>Calificar clientes</p>
+              </div>
 
               <Link
                 href="/registro/trabajador"
                 className="mt-auto block rounded-xl bg-orange-500 px-5 py-3 text-center font-semibold text-white transition hover:bg-orange-600"
               >
-                Registrarse como trabajador
+                Registrarme como trabajador
               </Link>
             </article>
           </div>
+
+          <p className="mt-8 text-center text-sm text-slate-600">
+            ¿Ya tenés cuenta?{" "}
+            <Link href="/login" className="font-semibold text-teal-600">
+              Iniciar sesión
+            </Link>
+          </p>
         </div>
       </section>
-
-      <footer className="border-t border-slate-200 bg-slate-100 px-5 py-8">
-        <div className="mx-auto flex max-w-5xl flex-col gap-6 md:flex-row md:items-center md:justify-between">
-          <div className="flex items-center gap-3">
-            <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-teal-500 text-sm font-bold text-white">
-              S
-            </div>
-
-            <span className="font-bold text-slate-600">ServiRed</span>
-          </div>
-
-          <nav className="flex flex-col gap-3 text-sm text-slate-600 md:flex-row md:gap-8">
-            <a href="#">Sobre nosotros</a>
-            <a href="#">Términos</a>
-            <a href="#">Privacidad</a>
-            <a href="#">Contacto</a>
-          </nav>
-        </div>
-
-        <p className="mt-8 text-center text-sm text-slate-500">
-          © 2026 ServiRed. Todos los derechos reservados.
-        </p>
-      </footer>
     </main>
   );
 }

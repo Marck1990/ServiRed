@@ -1,24 +1,10 @@
 import Link from "next/link";
+import Header from "@/components/Header";
 
 export default function DetalleSolicitudTrabajadorPage() {
   return (
     <main className="min-h-screen bg-white">
-      {/* encabezado principal */}
-      <header className="flex h-16 items-center justify-between border-b border-slate-200 bg-white px-5">
-        <Link href="/" className="flex items-center gap-3">
-          <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-teal-500 text-lg font-bold text-white">
-            S
-          </div>
-
-          <span className="text-lg font-bold tracking-wide text-slate-900">
-            ServiRed
-          </span>
-        </Link>
-
-        <button className="rounded-lg border border-slate-200 px-4 py-2 text-sm font-semibold text-slate-800">
-          Cerrar sesión
-        </button>
-      </header>
+      <Header mostrarCerrarSesion />
 
       {/* contenido principal */}
       <section className="px-5 py-8">
@@ -38,8 +24,8 @@ export default function DetalleSolicitudTrabajadorPage() {
                   Pintura
                 </span>
 
-                <span className="w-fit rounded-lg bg-blue-500 px-3 py-1 text-sm font-bold text-white">
-                  Publicada
+                <span className="w-fit rounded-lg bg-yellow-500 px-3 py-1 text-sm font-bold text-white">
+                  Postulada
                 </span>
               </div>
 
@@ -48,9 +34,9 @@ export default function DetalleSolicitudTrabajadorPage() {
               </h1>
 
               <p className="mt-4 leading-7 text-slate-600">
-                El cliente necesita pintar un living comedor completo. El
-                trabajo incluye preparación de paredes, reparación de detalles
-                menores y dos manos de pintura látex.
+                El cliente necesita pintar un living-comedor completo. El
+                trabajo incluye preparación de paredes, protección del espacio,
+                dos manos de pintura y limpieza básica al finalizar.
               </p>
 
               <div className="mt-6 grid gap-4 rounded-xl bg-slate-100 p-4 text-sm text-slate-700 sm:grid-cols-3">
@@ -60,7 +46,9 @@ export default function DetalleSolicitudTrabajadorPage() {
                 </div>
 
                 <div>
-                  <p className="font-semibold text-slate-950">Presupuesto</p>
+                  <p className="font-semibold text-slate-950">
+                    Presupuesto estimado
+                  </p>
                   <p className="mt-1">$3200</p>
                 </div>
 
@@ -72,7 +60,7 @@ export default function DetalleSolicitudTrabajadorPage() {
 
               <div className="mt-6">
                 <h2 className="text-lg font-bold text-slate-950">
-                  Fotos del problema
+                  Fotos del trabajo
                 </h2>
 
                 <div className="mt-4 grid grid-cols-2 gap-4 sm:grid-cols-3">
@@ -91,29 +79,18 @@ export default function DetalleSolicitudTrabajadorPage() {
               </div>
             </article>
 
-            {/* postulacion del trabajador */}
+            {/* propuesta del trabajador */}
             <aside className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
               <h2 className="text-lg font-bold text-slate-950">
-                Postularme al trabajo
+                Tu propuesta
               </h2>
 
               <p className="mt-2 text-sm leading-6 text-slate-600">
-                Enviá una propuesta clara para que el cliente pueda evaluarte.
+                Enviá un presupuesto y un mensaje breve para que el cliente
+                pueda evaluar tu postulación.
               </p>
 
               <form className="mt-6 flex flex-col gap-5">
-                <div>
-                  <label className="block text-sm font-medium text-slate-900">
-                    Mensaje para el cliente
-                  </label>
-
-                  <textarea
-                    rows={5}
-                    placeholder="Ej: Puedo realizar el trabajo esta semana. Incluye materiales básicos y mano de obra."
-                    className="mt-2 w-full resize-none rounded-lg border border-slate-300 px-4 py-3 text-sm outline-none focus:border-teal-500"
-                  />
-                </div>
-
                 <div>
                   <label className="block text-sm font-medium text-slate-900">
                     Presupuesto propuesto
@@ -122,7 +99,7 @@ export default function DetalleSolicitudTrabajadorPage() {
                   <input
                     type="number"
                     placeholder="Ej: 3200"
-                    className="mt-2 w-full rounded-lg border border-slate-300 px-4 py-3 text-sm outline-none focus:border-teal-500"
+                    className="mt-2 w-full rounded-lg border border-slate-300 px-4 py-3 text-sm outline-none focus:border-orange-500"
                   />
                 </div>
 
@@ -134,17 +111,36 @@ export default function DetalleSolicitudTrabajadorPage() {
                   <input
                     type="text"
                     placeholder="Ej: 2 días"
-                    className="mt-2 w-full rounded-lg border border-slate-300 px-4 py-3 text-sm outline-none focus:border-teal-500"
+                    className="mt-2 w-full rounded-lg border border-slate-300 px-4 py-3 text-sm outline-none focus:border-orange-500"
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-sm font-medium text-slate-900">
+                    Mensaje para el cliente
+                  </label>
+
+                  <textarea
+                    rows={5}
+                    placeholder="Contale brevemente cómo harías el trabajo..."
+                    className="mt-2 w-full resize-none rounded-lg border border-slate-300 px-4 py-3 text-sm outline-none focus:border-orange-500"
                   />
                 </div>
 
                 <button
                   type="button"
-                  className="rounded-xl bg-teal-500 px-5 py-3 font-semibold text-white transition hover:bg-teal-600"
+                  className="rounded-xl bg-orange-500 px-5 py-3 font-semibold text-white transition hover:bg-orange-600"
                 >
-                  Enviar postulación
+                  Enviar propuesta
                 </button>
               </form>
+
+              <Link
+                href="/trabajador/solicitudes/2/calificar"
+                className="mt-3 block rounded-xl border border-slate-300 px-5 py-3 text-center font-semibold text-slate-800 transition hover:bg-slate-50"
+              >
+                Calificar cliente
+              </Link>
             </aside>
           </div>
         </div>

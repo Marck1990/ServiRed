@@ -1,47 +1,34 @@
 import Link from "next/link";
+import Header from "@/components/Header";
 
 export default function LoginPage() {
   return (
     <main className="min-h-screen bg-white">
-      <header className="flex h-16 items-center border-b border-slate-200 bg-white px-5">
-        <Link href="/" className="flex items-center gap-3">
-          <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-teal-500 text-lg font-bold text-white">
-            S
-          </div>
+      <Header />
 
-          <span className="text-lg font-bold tracking-wide text-slate-900">
-            ServiRed
-          </span>
-        </Link>
-      </header>
-
+      {/* contenido principal */}
       <section className="px-5 py-10">
-        <div className="mx-auto max-w-md">
-          <Link
-            href="/"
-            className="inline-flex rounded-lg border border-slate-200 bg-white px-4 py-2 text-sm font-medium text-slate-800 shadow-sm"
-          >
-            ← Volver
-          </Link>
-
-          <div className="mt-6 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
-            <h1 className="text-xl font-bold text-slate-950">
+        <div className="mx-auto grid max-w-6xl gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
+          {/* formulario */}
+          <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+            <h1 className="text-3xl font-extrabold text-slate-950">
               Iniciar sesión
             </h1>
 
             <p className="mt-2 text-sm leading-6 text-slate-600">
-              Ingresa a tu cuenta para continuar en ServiRed.
+              Accedé a tu cuenta para gestionar solicitudes, postulaciones y
+              calificaciones.
             </p>
 
             <form className="mt-7 flex flex-col gap-5">
               <div>
                 <label className="block text-sm font-medium text-slate-900">
-                  Email
+                  Correo electrónico
                 </label>
 
                 <input
                   type="email"
-                  placeholder="juan@ejemplo.com"
+                  placeholder="ejemplo@correo.com"
                   className="mt-2 w-full rounded-lg border border-slate-300 px-4 py-3 text-sm outline-none focus:border-teal-500"
                 />
               </div>
@@ -53,51 +40,88 @@ export default function LoginPage() {
 
                 <input
                   type="password"
-                  placeholder="Ingresá tu contraseña"
+                  placeholder="Ingresa tu contraseña"
                   className="mt-2 w-full rounded-lg border border-slate-300 px-4 py-3 text-sm outline-none focus:border-teal-500"
                 />
               </div>
 
               <button
                 type="button"
-                className="mt-1 rounded-lg bg-teal-500 px-5 py-3 font-semibold text-white transition hover:bg-teal-600"
+                className="rounded-xl bg-teal-500 px-5 py-3 font-semibold text-white transition hover:bg-teal-600"
               >
                 Entrar
               </button>
             </form>
 
-            <div className="mt-6 text-center text-sm text-slate-600">
-              ¿No tenés cuenta?{" "}
+            {/* accesos rapidos de demo */}
+            <div className="mt-7 rounded-xl bg-slate-100 p-4">
+              <p className="text-sm font-semibold text-slate-950">
+                Accesos rápidos de prueba
+              </p>
+
+              <div className="mt-4 grid gap-3 sm:grid-cols-2">
+                <Link
+                  href="/cliente/dashboard"
+                  className="rounded-xl bg-teal-500 px-4 py-3 text-center text-sm font-semibold text-white transition hover:bg-teal-600"
+                >
+                  Entrar como cliente
+                </Link>
+
+                <Link
+                  href="/trabajador/dashboard"
+                  className="rounded-xl bg-orange-500 px-4 py-3 text-center text-sm font-semibold text-white transition hover:bg-orange-600"
+                >
+                  Entrar como trabajador
+                </Link>
+              </div>
+            </div>
+
+            <p className="mt-6 text-center text-sm text-slate-600">
+              ¿Todavía no tenés cuenta?{" "}
               <Link href="/registro" className="font-semibold text-teal-600">
-                Registrate
+                Crear cuenta
               </Link>
+            </p>
+          </div>
+
+          {/* panel informativo */}
+          <div className="rounded-3xl border border-slate-200 bg-slate-50 p-6 shadow-sm">
+            <span className="inline-flex rounded-full bg-teal-100 px-4 py-2 text-sm font-bold text-teal-700">
+              ServiRed
+            </span>
+
+            <h2 className="mt-5 text-3xl font-extrabold leading-tight text-slate-950">
+              Una cuenta para conectar trabajo, confianza y reputación
+            </h2>
+
+            <p className="mt-4 leading-8 text-slate-600">
+              Desde tu panel podés publicar trabajos, enviar propuestas,
+              revisar perfiles, aceptar postulaciones y calificar a la otra
+              parte cuando el servicio termina.
+            </p>
+
+            <div className="mt-7 grid gap-4">
+              <article className="rounded-2xl bg-white p-5 shadow-sm">
+                <h3 className="font-bold text-slate-950">Para clientes</h3>
+
+                <p className="mt-2 leading-7 text-slate-600">
+                  Publicá una solicitud y compará trabajadores según
+                  experiencia, precio y calificaciones.
+                </p>
+              </article>
+
+              <article className="rounded-2xl bg-white p-5 shadow-sm">
+                <h3 className="font-bold text-slate-950">Para trabajadores</h3>
+
+                <p className="mt-2 leading-7 text-slate-600">
+                  Encontrá oportunidades, enviá presupuestos y construí tu
+                  reputación dentro de la plataforma.
+                </p>
+              </article>
             </div>
           </div>
         </div>
       </section>
-
-      <footer className="border-t border-slate-200 bg-slate-100 px-5 py-8">
-        <div className="mx-auto flex max-w-5xl flex-col gap-6 md:flex-row md:items-center md:justify-between">
-          <div className="flex items-center gap-3">
-            <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-teal-500 text-sm font-bold text-white">
-              S
-            </div>
-
-            <span className="font-bold text-slate-600">ServiRed</span>
-          </div>
-
-          <nav className="flex flex-col gap-3 text-sm text-slate-600 md:flex-row md:gap-8">
-            <a href="#">Sobre nosotros</a>
-            <a href="#">Términos</a>
-            <a href="#">Privacidad</a>
-            <a href="#">Contacto</a>
-          </nav>
-        </div>
-
-        <p className="mt-8 text-center text-sm text-slate-500">
-          © 2026 ServiRed. Todos los derechos reservados.
-        </p>
-      </footer>
     </main>
   );
 }
